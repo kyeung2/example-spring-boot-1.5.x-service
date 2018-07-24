@@ -3,9 +3,10 @@ package io.flyingnimbus.service;
 import io.flyingnimbus.domain.Book;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+
+import static java.util.Arrays.asList;
+import static java.util.Collections.unmodifiableList;
 
 /**
  * @author Kye
@@ -13,7 +14,7 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
 
-    private static final  List<Book> GOOD_BOOKS = Collections.unmodifiableList(Arrays.asList(
+    private static final List<Book> GOOD_BOOKS = unmodifiableList(asList(
             Book.builder()
                     .title("Sapiens")
                     .subTitle("A Brief History of Humankind")
@@ -38,7 +39,7 @@ public class BookServiceImpl implements BookService {
                     .isbn("0140449337")
                     .build()
     ));
-    
+
     @Override
     public List<Book> getBooks() {
         return GOOD_BOOKS;
