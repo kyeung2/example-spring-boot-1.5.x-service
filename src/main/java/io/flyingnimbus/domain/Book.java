@@ -2,6 +2,7 @@ package io.flyingnimbus.domain;
 
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 /**
  * @author Kye
@@ -14,6 +15,7 @@ public class Book {
     private String subTitle;
     private String genre;
     private String description;
+    @Id
     private String isbn;
     private String author;
 
