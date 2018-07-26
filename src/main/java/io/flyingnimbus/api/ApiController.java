@@ -1,8 +1,9 @@
 package io.flyingnimbus.api;
 
+import io.flyingnimbus.data.BookRepository;
 import io.flyingnimbus.domain.Book;
-import io.flyingnimbus.service.BookService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,11 +18,12 @@ import java.util.List;
 @AllArgsConstructor
 public class ApiController {
 
-    private final BookService bookService;
+    private final BookRepository bookRepository;
 
-    @GetMapping("/books")
+    @GetMapping(value = "/books", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Book> index() {
-        return bookService.getBooks();
+
+        return bookRepository.findAll();
     }
 
 }
