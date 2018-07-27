@@ -9,17 +9,17 @@ A simple service with one endpoint GET /books. This is serviced by a Spring MVC 
 
 `>curl -X GET http://localhost:8080/books`
 
+![per_thread_handling.png](per_thread_handling.png)
 
 ## Spring Boot 1.5.X features
 
-* blocking IO
-* each request gets its own thread
+* one thread-per-request execution model
+    - synchronous and blocking
     - the size of the thread pool can be a bottleneck
     - database connection pool can be a bottleneck
     - IO to external providers will block
 * Servlet Stack: 
-    - **Spring MVC** (web framework, controllers etc)
+    - **Spring MVC** (web framework, controllers etc, uses Tomcat by default)
     - Servlet container (Tomcat, etc)
     - Servlet API (blocking)
-    
     
