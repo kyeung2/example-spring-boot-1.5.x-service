@@ -12,8 +12,6 @@ import java.util.List;
 /**
  * @author Kye
  */
-
-
 @RestController
 @AllArgsConstructor
 public class ApiController {
@@ -22,7 +20,6 @@ public class ApiController {
 
     @GetMapping(value = "/books", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Book> index() {
-
         return bookRepository.findAll();
     }
 
