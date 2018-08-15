@@ -1,5 +1,5 @@
 # example-spring-boot-1.5.x-service
-A simple Spring-boot 1.5.X service to compare with different backend technologies.
+A simple Spring-boot 1.5.X service to compare with various backend technologies.
 
 Blog post: [comparing execution model of various backend technologies](https://ioflyingnimbus.blogspot.com/2018/08/comparing-execution-model-of-various.html)
 
